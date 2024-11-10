@@ -1,19 +1,9 @@
-from kivymd.app import MDApp
-from kivy.lang import Builder
+from kivy.app import App
+from kivy.uix.image import Image
 
-class SampleApp(MDApp):
-    
+class MyImageApp(App):
     def build(self):
-        self.appKv='''
-MDScreen:
-    MDLabel:
-        text:'Hello,World.'
-        multiline:True
-        color:"blue"
-        halign:'center'         
-'''
-        AppScreen=Builder.load_string(self.appKv)
-        return AppScreen
+        return Image(source='image.jpg')  # استبدل 'image.jpg' باسم صورتك
 
-SampleApp().run()
-    
+if __name__ == '__main__':
+    MyImageApp().run()
